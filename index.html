@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona do notatek</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
+    <script src="jquery.scrollTo.min"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+    <script>
+        jQuery(function($)
+        {
+            $.scrollTo(0);
+
+            $('#link1').click(function() { $.scrollTo($('maskicrt'), 500); });
+        }
+        );
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">notatki-szkolne</a>
+        <ul>
+            <li><a href="instrukcjedocumentwrite.html"><b>Instrukcje dokumentu write</b></a></li>
+            <li><a href="zmiennejavascript.html"><b>Zmienne w JavaScript</b></a></li>
+            <li><a href="oknadialogowe.html"><b>Okna dialogowe w JavaScript</b></a></li>
+            <li><a href="typydanych.html"><b>Typy danych w JavaScript</b></a></li>
+        </ul>
+    </header>
+
+    
+
+    <div class="kontent">
+        <div id="zegar"></div>
+    <script type="text/javascript">
+ 
+    //utworzenie funkcji o nazwie czas
+    function czas() {
+        var data = new Date(); //tworzymy obiekt typu data
+        var godzina = data.getHours(); //pobieramy godzinę
+        var minuta = data.getMinutes(); //pobieramy minutę
+        var sekunda = data.getSeconds(); //pobieramy sekundy
+ 
+        // przypisanie zera do godziny, minuty i sekundy, czyli np. 05 a nie 5
+        if (godzina < 10) {
+            godzina = "0" + godzina;
+        }
+        if (minuta < 10) {
+            minuta = "0" + minuta;
+        }
+        if (sekunda < 10) {
+            sekunda = "0" + sekunda;
+        }
+ 
+        //wyświetlenie zegarka w divie o id zegar
+        document.querySelector("#zegar").innerHTML = "Obecna godzina: " + godzina + " : " + minuta + " : " + sekunda;
+ 
+        setTimeout(czas, 1000); 
+    }
+    window.addEventListener("load", czas); 
+    </script>
+        <h1>Skontaktuj się ze mną!</h1>
+        <a href="kontakt.html"><button class="guzik"><span></span>Kontakt</button></a>
+    </div>
+
+    <div class="footer">notatkiszkolne.pl &copy; 2022 Dziękuję za wizytę na mojej witrynie.</div>
+
+    
+    
+    
+</body>
+</html>
